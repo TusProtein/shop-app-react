@@ -1,0 +1,49 @@
+.Order {
+}
+
+.productHeader {
+    color: rgb(233, 66, 176);
+}
+
+.productOrder {
+    color: rgb(105, 244, 181);
+}
+
+.formControl {
+    color: white;
+    background-color: rgb(19, 23, 42);
+    border: 1px solid rgb(29, 33, 54);
+}
+
+.formControl:focus {
+    border-color: white;
+    background-color: rgb(19, 23, 42);
+    color: white;
+}
+
+.formLabel {
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    border-collapse: separate;
+    border: 1px solid white;
+    border-spacing: 10px;
+    background-color: rgb(12, 13, 54);
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+}
+
+.btnGradient {
+    background: linear-gradient(to right, rgb(225, 64, 180), rgb(126, 43, 237));
+    color: white;
+    border-radius: 30px;
+    width: 200px;
+}

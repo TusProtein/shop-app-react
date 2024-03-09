@@ -1,0 +1,25 @@
+.OrderConfirm {
+}
+
+table {
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    border-collapse: separate;
+    border: 1px solid white;
+    border-spacing: 10px;
+    background-color: rgb(12, 13, 54);
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+}
+
+.btnGradient {
+    background: linear-gradient(to right, rgb(225, 64, 180), rgb(126, 43, 237));
+    color: white;
+    border-radius: 30px;
+    width: 200px;
+}

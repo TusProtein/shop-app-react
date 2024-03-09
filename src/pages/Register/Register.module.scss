@@ -1,0 +1,33 @@
+.Register {
+}
+
+.registerFormForm {
+    background-color: rgb(12, 12, 55);
+    border: 1px solid rgb(32, 34, 60);
+}
+
+.registerFormHeader {
+    color: rgb(105, 244, 181);
+}
+
+.formControl:focus {
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-color: transparent;
+}
+
+.formControl::placeholder {
+    color: rgba(243, 165, 42, 0.4);
+    opacity: 1;
+}
+
+.checkboxText {
+    color: rgb(243, 165, 42);
+}
+
+.checkboxText input[type='checkbox']:checked {
+    border-color: white;
+    background-color: rgb(233, 66, 178);
+}

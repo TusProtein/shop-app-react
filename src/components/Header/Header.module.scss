@@ -1,0 +1,26 @@
+.Navbar {
+    color: white;
+}
+
+.navbarHeader {
+    background-color: transparent !important;
+}
+
+.navbarBrand {
+    color: rgb(173, 178, 203);
+}
+
+.navLink {
+    color: rgb(173, 178, 203);
+    border-radius: 16px;
+    padding: 8px 16px !important;
+
+    &:hover {
+        color: rgb(173, 178, 203);
+    }
+}
+
+.navLink.active {
+    background-color: rgb(127, 68, 255) !important;
+    color: white !important;
+}

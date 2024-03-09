@@ -45,15 +45,14 @@ body {
 @layer base {
     p {
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 500;
         line-height: 1rem;
     }
 }
 
 @layer base {
     h1,
-    h2,
-    h3 {
+    h2 {
         font-size: 2rem;
         font-weight: bold;
         line-height: 3rem;
@@ -61,10 +60,17 @@ body {
 }
 
 @layer base {
-    h2,
-    h3 {
+    h2 {
         font-size: 1.8rem;
-        font-weight: bold;
+        font-weight: 600;
+        line-height: 3rem;
+    }
+}
+
+@layer base {
+    h3 {
+        font-size: 1.6rem;
+        font-weight: 600;
         line-height: 2rem;
     }
 }

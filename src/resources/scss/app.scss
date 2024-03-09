@@ -1,0 +1,16 @@
+.form-control {
+    background-color: transparent;
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: transparent;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+.product-item {
+    background-color: rgb(19, 23, 42);
+    border: 1px solid rgb(35, 39, 61);
+}
