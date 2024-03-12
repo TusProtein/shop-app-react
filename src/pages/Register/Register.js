@@ -2,8 +2,10 @@ import React from 'react';
 import styles from './Register.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import InputComponent from '../../components/InputComponent/InputComponent';
+import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
 
-const formControlClass = `form-control ${styles.formControl} bg-transparent border-none text-white mt-2`;
+// const formControlClass = `form-control ${styles.formControl} bg-transparent border-none text-white mt-2`;
 
 const Register = () => (
     <div className={styles.Register}>
@@ -18,9 +20,10 @@ const Register = () => (
                         </h2>
                         <div className='form-group mt-2'>
                             <label htmlFor='email'>Email/Phone</label>
-                            <input
+
+                            <InputComponent
                                 type='text'
-                                className={formControlClass}
+                                className='bg-transparent border-none text-white mt-2'
                                 id='email'
                             />
                         </div>
@@ -28,10 +31,10 @@ const Register = () => (
 
                         <div className='form-group passwordField relative mt-5'>
                             <label htmlFor='password'>Mật khẩu</label>
-                            <input
+                            <InputComponent
                                 type='password'
                                 placeholder='Ít nhất 3 ký tự'
-                                className={formControlClass}
+                                className='bg-transparent border-none text-white mt-2 placeholder:text-[#684a3b]'
                                 id='password'
                             />
                             <FontAwesomeIcon
@@ -47,10 +50,10 @@ const Register = () => (
 
                         <div className='form-group passwordField relative mt-5'>
                             <label htmlFor='password'>Gõ lại mật khẩu</label>
-                            <input
+                            <InputComponent
                                 type='password'
                                 placeholder='Ít nhất 3 ký tự'
-                                className={formControlClass}
+                                className='bg-transparent border-none text-white mt-2 placeholder:text-[#684a3b]'
                                 id='confirm-password'
                             />
                             <FontAwesomeIcon
@@ -66,9 +69,9 @@ const Register = () => (
 
                         <div className='form-group relative mt-5'>
                             <label htmlFor='full-name'>Họ và tên</label>
-                            <input
+                            <InputComponent
                                 type='text'
-                                className={formControlClass}
+                                className='bg-transparent border-none text-white mt-2'
                                 id='full-name'
                             />
                             <FontAwesomeIcon
@@ -84,9 +87,9 @@ const Register = () => (
 
                         <div className='form-group relative mt-5'>
                             <label htmlFor='address'>Địa chỉ</label>
-                            <input
+                            <InputComponent
                                 type='text'
-                                className={formControlClass}
+                                className='bg-transparent border-none text-white mt-2'
                                 id='address'
                             />
                             <FontAwesomeIcon
@@ -121,17 +124,12 @@ const Register = () => (
                             </div>
                         </div>
 
-                        <button
+                        <ButtonComponent
                             type='button'
-                            style={{
-                                background:
-                                    'linear-gradient(to right, rgb(255,64,180), rgb(126,43,237))',
-                                padding: '10px 0',
-                            }}
-                            className='registerBtn rounded-[30px] w-full mt-[20px] border-none'
+                            className='registerBtn rounded-[30px] w-full mt-[20px] border-none py-[10px]'
                         >
                             Đăng ký
-                        </button>
+                        </ButtonComponent>
                         <div
                             style={{
                                 backgroundColor: 'rgb(243,165,42)',

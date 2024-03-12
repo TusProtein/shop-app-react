@@ -2,6 +2,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import ProductItem from '../../components/ProductItem/ProductItem';
+import InputComponent from '../../components/InputComponent/InputComponent';
 
 function Home() {
     return (
@@ -11,11 +12,11 @@ function Home() {
                     This is Home Page
                 </div>
                 <div className='seach-box flex justify-center items-center gap-x-4 mb-4 relative'>
-                    <input
+                    <InputComponent
                         type='text'
-                        className='form-control w-[500px] mr-[10px] text-white'
+                        className='w-[500px] mr-[10px]'
                         style={{
-                            backgroundColor: 'rgb(19,23,42)',
+                            border: '1px solid #fff',
                         }}
                         placeholder='Tìm sản phẩm'
                     />
@@ -26,8 +27,9 @@ function Home() {
                     <select
                         style={{
                             backgroundColor: 'transparent',
+                            color: '#adb2cb',
                         }}
-                        className='form-control w-[200px] text-white'
+                        className='form-control w-[200px]'
                         defaultValue='1'
                     >
                         <option value='1' disabled>

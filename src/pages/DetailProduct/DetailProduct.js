@@ -61,58 +61,6 @@ const DetailProduct = () => {
                                         </div>
                                     );
                                 })}
-                                {/* <div
-                                        key={index}
-                                        className={`carousel-item ${
-                                            index === activeSlide
-                                                ? 'active'
-                                                : ''
-                                        }`}
-                                    >
-                                        <div className='square-image'>
-                                            <img
-                                                src={`https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657`}
-                                                className='d-block w-100 h-full object-cover'
-                                                alt='Whey Protein'
-                                            />
-                                        </div>
-                                    </div> */}
-                                {/* <div className='carousel-item'>
-                                    <div className='square-image'>
-                                        <img
-                                            src='https://www.wheystore.vn/images/products/2023/11/21/large/inforgraphic-rule1-protein-5lbs_1700622044.jpg.webp'
-                                            className='d-block w-100 h-full object-cover'
-                                            alt='Whey Protein'
-                                        />
-                                    </div>
-                                </div>
-                                <div className='carousel-item'>
-                                    <div className='square-image'>
-                                        <img
-                                            src='https://www.wheystore.vn/images/products/2024/01/25/large/nhan-phu-rule-1-5lbs_1706177658.jpg.webp'
-                                            className='d-block w-100 h-full object-cover'
-                                            alt='Whey Protein'
-                                        />
-                                    </div>
-                                </div>
-                                <div className='carousel-item'>
-                                    <div className='square-image'>
-                                        <img
-                                            src='https://www.wheystore.vn/images/products/2023/11/21/large/thong-tin-chung-rule1-protein-5lbs_1700622045.jpg.webp'
-                                            className='d-block w-100 h-full object-cover'
-                                            alt='Whey Protein'
-                                        />
-                                    </div>
-                                </div>
-                                <div className='carousel-item'>
-                                    <div className='square-image'>
-                                        <img
-                                            src='https://www.wheystore.vn/images/products/2023/11/21/large/tem-cao-rule1-protein-5lbs_1700622045.jpg.webp'
-                                            className='d-block w-100 h-full object-cover'
-                                            alt='Whey Protein'
-                                        />
-                                    </div>
-                                </div> */}
                             </div>
                             <button
                                 className='carousel-control-prev'
@@ -146,15 +94,6 @@ const DetailProduct = () => {
                         {/* Thumbnail */}
                         <div className='row'>
                             <div className='thumbnail-container flex justify-between mt-[20px]'>
-                                {/* <div
-                                    className={`${thumbnailClass} ${styles.active}`}
-                                >
-                                    <img
-                                        src='https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657'
-                                        className='thumbnail-image'
-                                        alt='Thumbnail Image'
-                                    />
-                                </div> */}
                                 {thumbnails.map((thumbnail, index) => {
                                     return (
                                         <div
@@ -178,35 +117,6 @@ const DetailProduct = () => {
                                         </div>
                                     );
                                 })}
-
-                                {/* <div className={`${thumbnailClass}`}>
-                                    <img
-                                        src='https://www.wheystore.vn/images/products/2023/11/21/large/inforgraphic-rule1-protein-5lbs_1700622044.jpg.webp'
-                                        className='thumbnail-image'
-                                        alt='Thumbnail Image'
-                                    />
-                                </div>
-                                <div className={`${thumbnailClass}`}>
-                                    <img
-                                        src='https://www.wheystore.vn/images/products/2024/01/25/large/nhan-phu-rule-1-5lbs_1706177658.jpg.webp'
-                                        className='thumbnail-image'
-                                        alt='Thumbnail Image'
-                                    />
-                                </div>
-                                <div className={`${thumbnailClass}`}>
-                                    <img
-                                        src='https://www.wheystore.vn/images/products/2023/11/21/large/thong-tin-chung-rule1-protein-5lbs_1700622045.jpg.webp'
-                                        className='thumbnail-image'
-                                        alt='Thumbnail Image'
-                                    />
-                                </div>
-                                <div className={`${thumbnailClass}`}>
-                                    <img
-                                        src='https://www.wheystore.vn/images/products/2023/11/21/large/tem-cao-rule1-protein-5lbs_1700622045.jpg.webp'
-                                        className='thumbnail-image'
-                                        alt='Thumbnail Image'
-                                    />
-                                </div> */}
                             </div>
                         </div>
                     </div>

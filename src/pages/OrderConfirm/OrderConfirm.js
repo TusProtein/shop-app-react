@@ -1,4 +1,5 @@
 import React from 'react';
+import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
 import styles from './OrderConfirm.module.scss';
 
 const btnGradientClass = `btn ${styles.btnGradient}`;
@@ -72,9 +73,9 @@ const OrderConfirm = () => (
             </tbody>
         </table>
         <div className='text-center mt-3'>
-            <button className={btnGradientClass} type='button'>
+            <ButtonComponent className={btnGradientClass} type='button'>
                 Tiếp tục mua sắm
-            </button>
+            </ButtonComponent>
         </div>
     </div>
 );

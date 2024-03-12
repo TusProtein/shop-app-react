@@ -1,0 +1,21 @@
+.formControl {
+    color: white;
+    background-color: rgb(19, 23, 42);
+    border: 1px solid rgb(29, 33, 54);
+}
+
+.formControl::placeholder {
+    color: #adb2cb;
+    opacity: 1;
+}
+
+.formControl:focus {
+    border-color: transparent;
+    background-color: rgb(19, 23, 42);
+    color: white;
+}
+
+.product-item {
+    background-color: rgb(19, 23, 42);
+    border: 1px solid rgb(35, 39, 61);
+}

@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './Login.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import InputComponent from '../../components/InputComponent/InputComponent';
+import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
 
 const formControlClass = `form-control ${styles.formControl} bg-transparent border-none text-white mt-2`;
 
@@ -18,21 +20,23 @@ const Login = () => (
                         </h2>
                         <div className='form-group mt-2'>
                             <label htmlFor='email'>Email/Phone</label>
-                            <input
+
+                            <InputComponent
                                 type='text'
-                                className={formControlClass}
                                 id='email'
+                                className='bg-transparent border-none text-white mt-2 outline-none'
                             />
                         </div>
                         <div className='spaceTop border-[0.5px] border-solid border-white'></div>
 
                         <div className='form-group passwordField relative mt-5'>
                             <label htmlFor='password'>Mật khẩu</label>
-                            <input
+
+                            <InputComponent
                                 type='password'
                                 placeholder='Ít nhất 3 ký tự'
-                                className={formControlClass}
                                 id='password'
+                                className='bg-transparent border-none text-white mt-2 outline-none placeholder:text-[#684a3b]'
                             />
                             <FontAwesomeIcon
                                 style={{
@@ -86,17 +90,12 @@ const Login = () => (
                                 <option>Quản trị viên</option>
                             </select>
                         </div>
-                        <button
+                        <ButtonComponent
                             type='button'
-                            style={{
-                                background:
-                                    'linear-gradient(to right, rgb(255,64,180), rgb(126,43,237))',
-                                padding: '10px 0',
-                            }}
-                            className='loginBtn rounded-[30px] w-full mt-[20px] border-none'
+                            className='loginBtn rounded-[30px] w-full mt-[20px] border-none py-[10px]'
                         >
                             Đăng nhập
-                        </button>
+                        </ButtonComponent>
                         <div
                             style={{
                                 backgroundColor: 'rgb(243,165,42)',

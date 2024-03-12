@@ -1,6 +1,7 @@
 import DetailProduct from '../pages/DetailProduct/DetailProduct';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login/Login';
+import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 import Order from '../pages/Order/Order';
 import OrderConfirm from '../pages/OrderConfirm/OrderConfirm';
 import Register from '../pages/Register/Register';
@@ -33,5 +34,9 @@ export const routes = [
     {
         path: 'register',
         page: Register,
+    },
+    {
+        path: '*',
+        page: NotFoundPage,
     },
 ];

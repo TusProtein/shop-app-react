@@ -1,9 +1,9 @@
 import React from 'react';
+import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
 import InputComponent from '../../components/InputComponent/InputComponent';
 import styles from './Order.module.scss';
 
 // Create Obj css
-const formControlClass = `form-control ${styles.formControl}`;
 const formLabelClass = `form-label ${styles.formControl}`;
 const btnGradientClass = `btn ${styles.btnGradient}`;
 
@@ -28,10 +28,7 @@ const Order = () => (
                                 >
                                     Họ và tên
                                 </label>
-                                <InputComponent
-                                    type='text'
-                                    className={formControlClass}
-                                />
+                                <InputComponent type='text' id='name' />
                             </div>
                             <div>
                                 <label
@@ -40,11 +37,7 @@ const Order = () => (
                                 >
                                     Email
                                 </label>
-                                <input
-                                    type='email'
-                                    className={formControlClass}
-                                    id='email'
-                                />
+                                <InputComponent type='email' id='email' />
                             </div>
                             <div>
                                 <label
@@ -53,11 +46,7 @@ const Order = () => (
                                 >
                                     Số điện thoại
                                 </label>
-                                <input
-                                    type='text'
-                                    className={formControlClass}
-                                    id='phone'
-                                />
+                                <InputComponent type='text' id='phone' />
                             </div>
                         </div>
                     </form>
@@ -129,23 +118,25 @@ const Order = () => (
                                 Nhập Coupon
                             </h4>
                             <div className='input-group'>
-                                <input
+                                <InputComponent
                                     type='text'
-                                    className={formControlClass}
                                     placeholder='Nhập Coupon'
                                 />
-                                <button
-                                    className={btnGradientClass}
+                                <ButtonComponent
                                     type='button'
+                                    className={btnGradientClass}
                                 >
                                     Áp dụng
-                                </button>
+                                </ButtonComponent>
                             </div>
                         </div>
                         <div className='text-start '>
-                            <button className={btnGradientClass} type='button'>
+                            <ButtonComponent
+                                type='button'
+                                className={btnGradientClass}
+                            >
                                 Đặt hàng
-                            </button>
+                            </ButtonComponent>
                         </div>
                     </div>
                 </div>

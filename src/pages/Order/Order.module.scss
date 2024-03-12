@@ -9,6 +9,12 @@
     color: rgb(105, 244, 181);
 }
 
+.btnGradient {
+    color: white;
+    border-radius: 30px;
+    width: 200px;
+}
+
 .formControl {
     color: white;
     background-color: rgb(19, 23, 42);
@@ -39,11 +45,4 @@ th,
 td {
     padding: 12px;
     text-align: center;
-}
-
-.btnGradient {
-    background: linear-gradient(to right, rgb(225, 64, 180), rgb(126, 43, 237));
-    color: white;
-    border-radius: 30px;
-    width: 200px;
 }
