@@ -1,3 +1,6 @@
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -149,3 +152,27 @@ code {
 .ReactModal__Overlay .ReactModal__Overlay--after-open {
     background: rgba(0, 0, 0, 0.5);
 }
+
+/* Btn prev and next React Slick */
+.svg-inline--fa.fa-chevron-right.slick-arrow.slick-next {
+    color: white !important;
+}
+
+.svg-inline--fa.fa-chevron-left.slick-arrow.slick-prev {
+    color: white !important;
+}
+
+/* {arrProducts.map((srcImg, index) => {
+                        return (
+                            <ProductItem
+                                key={index}
+                                srcImg={srcImg}
+                                name='Rule 1 Protein 5 Lbs'
+                                type='Whey Protein Isolate & Hydrolyzate'
+                                price='2.000.000'
+                                discount='1.600.000'
+                                btnCart
+                                btnBuy
+                            />
+                        );
+                    })} */

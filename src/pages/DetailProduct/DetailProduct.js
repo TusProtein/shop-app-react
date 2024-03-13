@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SliderComponent from '../../components/SliderComponent/SliderComponent';
 import styles from './DetailProduct.module.scss';
 
 const thumbnailClass = `${styles.thubnailItem}`;
@@ -35,7 +36,7 @@ const DetailProduct = () => {
                 {/* body */}
                 <div className='row'>
                     <div className='col-md-6'>
-                        <div
+                        {/* <div
                             id='carouselExampleDark'
                             className='carousel carousel-dark slide'
                             data-bs-ride='carousel'
@@ -90,34 +91,37 @@ const DetailProduct = () => {
                                 ></span>
                                 <span className='visually-hidden'>Next</span>
                             </button>
+                        </div> */}
+                        <div>
+                            <SliderComponent arrImg={thumbnails} />
                         </div>
+
                         {/* Thumbnail */}
                         <div className='row'>
-                            <div className='thumbnail-container flex justify-between mt-[20px]'>
-                                {thumbnails.map((thumbnail, index) => {
-                                    return (
-                                        <div
-                                            key={index}
-                                            onClick={() =>
-                                                setActiveSlide(index)
-                                            }
-                                            className={`${thumbnailClass} ${
-                                                index === activeSlide
-                                                    ? styles.active
-                                                    : ''
-                                            }`}
-                                            data-bs-target='#carouselExampleDark'
-                                            data-bs-slide-to={index}
-                                        >
-                                            <img
-                                                src={thumbnail}
-                                                className='thumbnail-image'
-                                                alt='Thumbnail Image'
-                                            />
-                                        </div>
-                                    );
-                                })}
-                            </div>
+                            {/* <div className='thumbnail-container flex justify-between mt-[20px]'> */}
+                            {/* {thumbnails.map((thumbnail, index) => {
+                                return (
+                                    <div
+                                        key={index}
+                                        onClick={() => setActiveSlide(index)}
+                                        className={`${thumbnailClass} ${
+                                            index === activeSlide
+                                                ? styles.active
+                                                : ''
+                                        }`}
+                                        data-bs-target='#carouselExampleDark'
+                                        data-bs-slide-to={index}
+                                    >
+                                        <img
+                                            src={thumbnail}
+                                            className='thumbnail-image'
+                                            alt='Thumbnail Image'
+                                        />
+                                    </div>
+                                );
+                            })} */}
+
+                            {/* </div> */}
                         </div>
                     </div>
                     <div className='col-md-6'>

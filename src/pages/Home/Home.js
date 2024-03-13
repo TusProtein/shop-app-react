@@ -5,6 +5,13 @@ import ProductItem from '../../components/ProductItem/ProductItem';
 import InputComponent from '../../components/InputComponent/InputComponent';
 
 function Home() {
+    const arrProducts = [
+        'https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657',
+        'https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657',
+        'https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657',
+        'https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657',
+        'https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657',
+    ];
     return (
         <>
             <div className='container'>
@@ -41,51 +48,19 @@ function Home() {
                     </select>
                 </div>
                 <div className='row'>
-                    <ProductItem
-                        srcImg='https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657'
-                        name='Rule 1 Protein 5 Lbs'
-                        type='Whey Protein Isolate & Hydrolyzate'
-                        price='2.000.000'
-                        discount='1.600.000'
-                        btnCart
-                        btnBuy
-                    />
-                    <ProductItem
-                        srcImg='https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657'
-                        name='Rule 1 Protein 5 Lbs'
-                        type='Whey Protein Isolate & Hydrolyzate'
-                        price='2.000.000'
-                        discount='1.600.000'
-                        btnCart
-                        btnBuy
-                    />
-                    <ProductItem
-                        srcImg='https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657'
-                        name='Rule 1 Protein 5 Lbs'
-                        type='Whey Protein Isolate & Hydrolyzate'
-                        price='2.000.000'
-                        discount='1.600.000'
-                        btnCart
-                        btnBuy
-                    />
-                    <ProductItem
-                        srcImg='https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657'
-                        name='Rule 1 Protein 5 Lbs'
-                        type='Whey Protein Isolate & Hydrolyzate'
-                        price='2.000.000'
-                        discount='1.600.000'
-                        btnCart
-                        btnBuy
-                    />
-                    <ProductItem
-                        srcImg='https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657'
-                        name='Rule 1 Protein 5 Lbs'
-                        type='Whey Protein Isolate & Hydrolyzate'
-                        price='2.000.000'
-                        discount='1.600.000'
-                        btnCart
-                        btnBuy
-                    />
+                    {arrProducts.map((srcImg, index) => {
+                        return (
+                            <ProductItem
+                                key={index}
+                                srcImg={srcImg}
+                                type='Whey Protein Isolate & Hydrolyzate'
+                                price='2.000.000'
+                                discount='1.600.000'
+                                btnCart
+                                btnBuy
+                            />
+                        );
+                    })}
                 </div>
             </div>
         </>

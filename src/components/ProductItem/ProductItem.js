@@ -13,7 +13,12 @@ const ProductItem = ({
 }) => {
     return (
         <div className='col-lg-4 col-md-6'>
-            <div className='product-item flex flex-col gap-y-4 p-4 rounded-[20px] mb-4 text-white'>
+            <div
+                style={{
+                    border: '1px solid #fff',
+                }}
+                className='product-item flex flex-col gap-y-4 p-4 rounded-[20px] mb-4 text-white'
+            >
                 <img
                     className='w-full h-auto rounded-2xl'
                     src={srcImg}
