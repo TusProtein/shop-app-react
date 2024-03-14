@@ -1,7 +1,14 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faDumbbell } from '@fortawesome/free-solid-svg-icons';
+import {
+    faBars,
+    faCartShopping,
+    faDumbbell,
+    faMagnifyingGlass,
+} from '@fortawesome/free-solid-svg-icons';
+import InputComponent from '../InputComponent/InputComponent';
+import MenuItems from '../MenuItems/MenuItems';
 
 const Header = () => (
     <div className={styles.Header}>
@@ -9,14 +16,26 @@ const Header = () => (
             <nav
                 style={{
                     backgroundColor: 'transparent !important',
+                    color: '#adb2cb',
                 }}
                 className={`${styles.navbarHeader} navbar navbar-expand-lg navbar-light bg-dark`}
             >
-                <div className='container gap-x-6'>
-                    <a className={styles.navbarBrand} href='/home'>
+                <div className='container gap-x-10 py-4 items-center'>
+                    <a
+                        className={`${styles.navbarBrand} flex gap-x-3 items-center`}
+                        href='/home'
+                    >
                         <FontAwesomeIcon icon={faDumbbell} />
+                        <div className='flex flex-col'>
+                            <span className='text-[1.2rem] font-medium'>
+                                Heathy
+                            </span>
+                            <span className='text-[1.2rem] font-medium'>
+                                Foods
+                            </span>
+                        </div>
                     </a>
-                    <button
+                    {/* <button
                         className='navbar-toggler'
                         type='button'
                         data-bs-toggle='collapse'
@@ -26,21 +45,54 @@ const Header = () => (
                         aria-label='Toggle navigation'
                     >
                         <span className='navbar-toggler-icon'></span>
-                    </button>
+                    </button> */}
+
+                    <div>
+                        {/* <select
+                            style={{
+                                backgroundColor: 'transparent',
+                                color: '#adb2cb',
+                            }}
+                            className='form-control w-[200px]'
+                            defaultValue='1'
+                        >
+                            <option value='1' disabled>
+                                Danh mục sản phẩm
+                            </option>
+                            <option value='2'>Đồ ăn Healthy</option>
+                            <option value='3'>Thực phẩm bổ sung</option>
+                            <option value='4'>Gói tập luyện</option>
+                        </select> */}
+                        <button
+                            style={{
+                                border: '1px solid #fff',
+                            }}
+                            className='btn text-[#adb2cb] hover:text-white flex items-center'
+                        >
+                            <MenuItems />
+                        </button>
+                    </div>
+
+                    <div className='seach-box flex justify-center items-center gap-x-4 relative'>
+                        <InputComponent
+                            type='text'
+                            className='w-[500px]'
+                            style={{
+                                border: '1px solid #fff',
+                            }}
+                            placeholder='Tìm sản phẩm'
+                        />
+                        <FontAwesomeIcon
+                            className='absolute right-[3.5%] cursor-pointer text-[#adb2cb]'
+                            icon={faMagnifyingGlass}
+                        />
+                    </div>
+
                     <div
-                        className='navbar-collapse'
+                        className='navbar-collapse flex items-center justify-end'
                         id='navbarSupportedContent'
                     >
-                        <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
-                            <li className='nav-item'>
-                                <a
-                                    className={`nav-link ${styles.navLink} ${styles.active} active`}
-                                    aria-current='page'
-                                    href='/home'
-                                >
-                                    Trang chủ
-                                </a>
-                            </li>
+                        <ul className='navbar-nav'>
                             <li className='nav-item'>
                                 <a
                                     className={`nav-link ${styles.navLink}`}

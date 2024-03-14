@@ -12,7 +12,7 @@ const ProductItem = ({
     btnBuy,
 }) => {
     return (
-        <div className='col-lg-4 col-md-6'>
+        <div className='col-lg-3 col-md-6 mt-4'>
             <div
                 style={{
                     border: '1px solid #fff',
@@ -49,13 +49,15 @@ const ProductItem = ({
                 </div>
                 <div className='flex gap-x-2'>
                     {btnCart && (
-                        <button className='btn btn-primary'>
+                        <button className='btn btn-primary px-[9.5px]'>
                             Thêm vào giỏ hàng
                         </button>
                     )}
 
                     {btnBuy && (
-                        <button className='btn btn-success'>Mua ngay</button>
+                        <button className='btn btn-success px-[9.5px]'>
+                            Mua ngay
+                        </button>
                     )}
                 </div>
             </div>
