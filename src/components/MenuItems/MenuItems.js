@@ -1,72 +1,72 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Tippy from '@tippyjs/react/headless';
 
-import {
-    faBars,
-    faCircleQuestion,
-    faEarthEurope,
-    faKeyboard,
-} from '@fortawesome/free-solid-svg-icons';
+import { faBars, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import WrapperMenu from '../../components/WrapperMenu/WrapperMenu';
 import styles from './MenuItems.module.scss';
+import HeaderMenu from './HeaderMenu';
 
-const MenuItems = () => {
-    const MENU_ITEMS = [
-        {
-            icon: <FontAwesomeIcon icon={faEarthEurope} />,
-            title: 'English',
-            // children: {
-            //     title: 'Language',
-            //     data: [
-            //         {
-            //             type: 'language',
-            //             code: 'en',
-            //             title: 'English',
-            //         },
-            //         {
-            //             type: 'language',
-            //             code: 'vi',
-            //             title: 'Tiếng Việt',
-            //         },
-            //     ],
-            // },
-        },
-        {
-            icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-            title: 'Feedback and helps',
-            to: '/feedback',
-        },
-        {
-            icon: <FontAwesomeIcon icon={faKeyboard} />,
-            title: 'Keyboards shortcuts',
-        },
-    ];
+const MenuItems = ({ arrItems, onChangeItem = () => {} }) => {
+    const [history, setHistory] = useState([{ data: arrItems }]);
+    const [isHovered, setIsHovered] = useState(false);
 
-    const renderSubMenu = (children) => {
-        if (!children) return null;
-        return (
-            <div>
-                {children.data.map((childItem, childIndex) => (
-                    <div key={childIndex}>{childItem.title}</div>
-                ))}
-            </div>
-        );
-    };
+    const current = history[history.length - 1];
+
+    // const renderSubMenu = (children) => {
+    //     if (!children) return null;
+    //     return (
+    //         <Tippy
+    //             offset={[50, 16]}
+    //             visible={isHovered}
+    //             interactive
+    //             onHide={() => setIsHovered(false)}
+    //         >
+    //             <div className={styles.subMenu}>
+    //                 {children.data.map((childrenItem, index) => {
+    //                     return <div key={index}>{childrenItem.title}</div>;
+    //                 })}
+    //             </div>
+    //         </Tippy>
+    //     );
+    // };
 
     const renderMenuItems = () => {
-        return (
-            <>
-                {MENU_ITEMS.map((item, index) => {
-                    return (
-                        <div className={styles.menuItem} key={index}>
-                            <div>{item.title}</div>
-                            {renderSubMenu(item.children)}
-                        </div>
-                    );
-                })}
-            </>
-        );
+        return current.data.map((item, index) => {
+            const isParent = !!item.children;
+
+            return (
+                <div key={index}>
+                    <button
+                        className={`${styles.menuItem} flex items-center justify-between`}
+                        onClick={() => {
+                            if (isParent) {
+                                setHistory((prev) => [...prev, item.children]);
+                            } else {
+                                onChangeItem(item);
+                            }
+                        }}
+                    >
+                        {item.title}
+                        <FontAwesomeIcon
+                            style={{
+                                fontSize: '10px',
+                            }}
+                            icon={faChevronRight}
+                        />
+                    </button>
+                    {/* {renderSubMenu(item.children)} */}
+                </div>
+            );
+        });
+    };
+
+    const handleResetMenu = () => {
+        setHistory((prev) => prev.slice(0, 1));
+    };
+
+    const handleBack = () => {
+        setHistory((prev) => prev.slice(0, prev.length - 1));
     };
 
     return (
@@ -76,22 +76,23 @@ const MenuItems = () => {
                 interactive
                 hideOnClick={true}
                 // hideOnClick={hideOnClick}
-                // onHide={handleResetMenu}
+                onHide={handleResetMenu}
                 delay={[0, 700]}
-                // placement='bottom-end'
                 render={(attrs) => (
                     <div
                         className='menuIcon w-[224px]'
                         tabIndex='-1'
                         {...attrs}
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
                     >
                         <WrapperMenu className={`flex flex-col`}>
-                            {/* {history.length > 1 && (
+                            {history.length > 1 && (
                                 <HeaderMenu
                                     title={current.title}
                                     onBack={handleBack}
                                 />
-                            )} */}
+                            )}
                             <div className='overflow-y-auto'>
                                 {renderMenuItems()}
                             </div>

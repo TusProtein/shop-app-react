@@ -1,7 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
+import styles from './ProductItem.module.scss';
+
 const ProductItem = ({
     srcImg,
     name,
@@ -17,7 +18,7 @@ const ProductItem = ({
                 style={{
                     border: '1px solid #fff',
                 }}
-                className='product-item flex flex-col gap-y-4 p-4 rounded-[20px] mb-4 text-white'
+                className={`${styles.productItem} flex flex-col gap-y-4 p-4 rounded-[20px] mb-4 text-white`}
             >
                 <img
                     className='w-full h-auto rounded-2xl'
