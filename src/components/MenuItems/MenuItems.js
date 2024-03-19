@@ -9,37 +9,19 @@ import HeaderMenu from './HeaderMenu';
 
 const MenuItems = ({ arrItems, onChangeItem = () => {} }) => {
     const [history, setHistory] = useState([{ data: arrItems }]);
-    const [isHovered, setIsHovered] = useState(false);
 
+    // The last item
     const current = history[history.length - 1];
-
-    // const renderSubMenu = (children) => {
-    //     if (!children) return null;
-    //     return (
-    //         <Tippy
-    //             offset={[50, 16]}
-    //             visible={isHovered}
-    //             interactive
-    //             onHide={() => setIsHovered(false)}
-    //         >
-    //             <div className={styles.subMenu}>
-    //                 {children.data.map((childrenItem, index) => {
-    //                     return <div key={index}>{childrenItem.title}</div>;
-    //                 })}
-    //             </div>
-    //         </Tippy>
-    //     );
-    // };
 
     const renderMenuItems = () => {
         return current.data.map((item, index) => {
-            const isParent = !!item.children;
-
             return (
                 <div key={index}>
                     <button
                         className={`${styles.menuItem} flex items-center justify-between`}
                         onClick={() => {
+                            const isParent = !!item.children;
+
                             if (isParent) {
                                 setHistory((prev) => [...prev, item.children]);
                             } else {
@@ -55,7 +37,6 @@ const MenuItems = ({ arrItems, onChangeItem = () => {} }) => {
                             icon={faChevronRight}
                         />
                     </button>
-                    {/* {renderSubMenu(item.children)} */}
                 </div>
             );
         });
@@ -75,7 +56,6 @@ const MenuItems = ({ arrItems, onChangeItem = () => {} }) => {
                 offset={[50, 12]}
                 interactive
                 hideOnClick={true}
-                // hideOnClick={hideOnClick}
                 onHide={handleResetMenu}
                 delay={[0, 700]}
                 render={(attrs) => (
@@ -83,8 +63,6 @@ const MenuItems = ({ arrItems, onChangeItem = () => {} }) => {
                         className='menuIcon w-[224px]'
                         tabIndex='-1'
                         {...attrs}
-                        onMouseEnter={() => setIsHovered(true)}
-                        onMouseLeave={() => setIsHovered(false)}
                     >
                         <WrapperMenu className={`flex flex-col`}>
                             {history.length > 1 && (

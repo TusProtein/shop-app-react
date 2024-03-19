@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import ProductItem from '../../components/ProductItem/ProductItem';
 import InputComponent from '../../components/InputComponent/InputComponent';
+import Paginations from '../../components/Paginations/Paginations';
 
 function Home() {
     const arrProducts = [
@@ -37,6 +38,8 @@ function Home() {
                         );
                     })}
                 </div>
+
+                <Paginations />
             </div>
         </>
     );

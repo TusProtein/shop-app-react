@@ -16,8 +16,8 @@ import MenuItems from '../MenuItems/MenuItems';
 
 const Header = () => {
     const handleChangeItem = (menuItem) => {
-        switch (menuItem.type) {
-            case 'language':
+        switch (menuItem.title) {
+            case 'healthyFood':
                 //Handle logic
                 break;
             default:
@@ -58,7 +58,7 @@ const Header = () => {
         },
         {
             icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-            title: 'Đồ ăn Healthy',
+            title: 'Đồ ăn Healthy', // healthyFood
             to: '/menu-foods',
         },
         {
@@ -167,9 +167,14 @@ const Header = () => {
                                         className={`nav-link ${styles.navLink}`}
                                         href='/cart'
                                     >
-                                        <FontAwesomeIcon
-                                            icon={faCartShopping}
-                                        />{' '}
+                                        <span className='relative'>
+                                            <FontAwesomeIcon
+                                                icon={faCartShopping}
+                                            />
+                                            <span className='position-absolute top-[-40%] start-100 translate-middle badge rounded-pill bg-danger'>
+                                                4
+                                            </span>
+                                        </span>{' '}
                                         Giỏ hàng
                                     </a>
                                 </li>
