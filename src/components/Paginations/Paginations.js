@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Paginations = ({ customStyle }) => {
-    let className = 'page-link bg-transparent text-white border-none';
+    const className = 'page-link bg-transparent text-white border-none';
     return (
         <div>
             <nav aria-label='Page navigation example'>

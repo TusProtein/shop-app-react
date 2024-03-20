@@ -23,6 +23,7 @@ const SliderComponent = ({ arrImg }) => {
     }
 
     let settings = {
+        ref: sliderRef,
         dots: false,
         infinite: true,
         speed: 500,
@@ -33,7 +34,6 @@ const SliderComponent = ({ arrImg }) => {
         beforeChange: (current, next) => setActiveSlide(next),
         prevArrow: <PrevArrow />,
         nextArrow: <NextArrow />,
-        ref: sliderRef,
     };
 
     return (

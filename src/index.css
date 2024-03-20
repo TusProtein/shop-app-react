@@ -154,25 +154,21 @@ code {
 }
 
 /* Btn prev and next React Slick */
+.svg-inline--fa.fa-chevron-right.slick-arrow.slick-next,
+.svg-inline--fa.fa-chevron-left.slick-arrow.slick-prev {
+    color: #000 !important;
+    background-color: white !important;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, 0.3) !important;
+    z-index: 1 !important;
+}
+
 .svg-inline--fa.fa-chevron-right.slick-arrow.slick-next {
-    color: white !important;
+    right: -7%;
 }
 
 .svg-inline--fa.fa-chevron-left.slick-arrow.slick-prev {
-    color: white !important;
+    left: -7%;
+    top: 51%;
 }
-
-/* {arrProducts.map((srcImg, index) => {
-                        return (
-                            <ProductItem
-                                key={index}
-                                srcImg={srcImg}
-                                name='Rule 1 Protein 5 Lbs'
-                                type='Whey Protein Isolate & Hydrolyzate'
-                                price='2.000.000'
-                                discount='1.600.000'
-                                btnCart
-                                btnBuy
-                            />
-                        );
-                    })} */
