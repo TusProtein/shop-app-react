@@ -58,7 +58,7 @@ const SliderComponent = ({ arrImg }) => {
                             <img
                                 src={thumbnail}
                                 className='thumbnail-image'
-                                alt='Thumbnail Image'
+                                alt='Thumbnail'
                             />
                         </div>
                     );

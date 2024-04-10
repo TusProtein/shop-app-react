@@ -4,11 +4,12 @@ import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import styles from './ProductItem.module.scss';
 
 const ProductItem = ({
-    srcImg,
+    image,
     name,
     type,
     discount,
     price,
+    rating,
     btnCart,
     btnBuy,
 }) => {
@@ -22,7 +23,7 @@ const ProductItem = ({
             >
                 <img
                     className='w-full h-auto rounded-2xl'
-                    src={srcImg}
+                    src={image}
                     alt='Whey protein'
                 />
                 <h3>{name}</h3>
@@ -42,11 +43,12 @@ const ProductItem = ({
                 )}
 
                 <div className='text-[#FFD700]'>
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStar} />
-                    <FontAwesomeIcon icon={faStarHalfAlt} />
+                    {Array.from({ length: Math.floor(rating) }, (_, i) => (
+                        <FontAwesomeIcon key={i} icon={faStar} />
+                    ))}
+                    {rating % 1 !== 0 && (
+                        <FontAwesomeIcon icon={faStarHalfAlt} />
+                    )}
                 </div>
                 <div className='flex gap-x-2'>
                     {btnCart && (

@@ -1,21 +1,49 @@
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
-import ProductItem from '../../components/ProductItem/ProductItem';
-import InputComponent from '../../components/InputComponent/InputComponent';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import Paginations from '../../components/Paginations/Paginations';
+import ProductItem from '../../components/ProductItem/ProductItem';
 
 function Home() {
-    const arrProducts = [
-        'https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657',
-        'https://bizweb.dktcdn.net/thumb/grande/100/011/344/products/nutrabolics-hydropure-extreme-ch.jpg?v=1689657674980',
-        'https://bizweb.dktcdn.net/thumb/1024x1024/100/011/344/products/biotechusa-hydro-whey-zero-chocolate-1-8kg-gymstore-jpeg.jpg?v=1690008647117',
-        'https://bizweb.dktcdn.net/thumb/grande/100/011/344/products/b4.jpg?v=1695203278557',
-        'https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657',
-        'https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657',
-        'https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657',
-        'https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657',
-    ];
+    const [products, setProducts] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState();
+
+    useEffect(() => {
+        loadPage(currentPage);
+    }, [currentPage]);
+
+    const loadPage = (page) => {
+        axios
+            .get(
+                `http://localhost:3001/api/product/getAllProducts?page=${page}`
+            )
+            .then((response) => {
+                setTotalPages(response.data.totalPage);
+                setProducts(response.data.data);
+            })
+            .catch((err) => console.log(err));
+    };
+
+    const handleChangePage = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    const nextPage = (e) => {
+        if (currentPage < totalPages) {
+            setCurrentPage((currentPage) => currentPage + 1);
+        } else {
+            e.preventDefault();
+        }
+    };
+
+    const prevPage = (e) => {
+        if (currentPage > 1) {
+            setCurrentPage((currentPage) => currentPage - 1);
+        } else {
+            e.preventDefault();
+        }
+    };
+
     return (
         <>
             <div className='container'>
@@ -24,14 +52,16 @@ function Home() {
                 </div>
 
                 <div className='row'>
-                    {arrProducts.map((srcImg, index) => {
+                    {products.map((data, index) => {
                         return (
                             <ProductItem
                                 key={index}
-                                srcImg={srcImg}
-                                type='Whey Protein Isolate & Hydrolyzate'
-                                price='2.000.000'
-                                discount='1.600.000'
+                                name={data.name}
+                                image={data.image}
+                                type={data.type}
+                                price={data.price}
+                                discount={data.discount}
+                                rating={data.rating}
                                 btnCart
                                 btnBuy
                             />
@@ -39,7 +69,13 @@ function Home() {
                     })}
                 </div>
 
-                <Paginations />
+                <Paginations
+                    nextPage={nextPage}
+                    prevPage={prevPage}
+                    totalPages={totalPages}
+                    handleChangePage={handleChangePage}
+                    currentPage={currentPage}
+                />
             </div>
         </>
     );

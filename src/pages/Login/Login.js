@@ -67,7 +67,7 @@ const Login = () => (
                                     </label>
                                 </span>
                                 <a
-                                    href='#'
+                                    href='/forgotPassword'
                                     style={{ color: 'rgb(105,244,181)' }}
                                     className='register-link'
                                 >

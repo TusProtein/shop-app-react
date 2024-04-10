@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SliderComponent from '../../components/SliderComponent/SliderComponent';
 import styles from './DetailProduct.module.scss';
 
-const thumbnailClass = `${styles.thubnailItem}`;
+// const thumbnailClass = `${styles.thubnailItem}`;
 
 const DetailProduct = () => {
-    const [activeSlide, setActiveSlide] = useState(0);
+    // const [activeSlide, setActiveSlide] = useState(0);
 
-    const handleSlidePrev = () => {
-        const newActiveSlide =
-            (activeSlide - 1 + thumbnails.length) % thumbnails.length;
-        setActiveSlide(newActiveSlide);
-    };
+    // const handleSlidePrev = () => {
+    //     const newActiveSlide =
+    //         (activeSlide - 1 + thumbnails.length) % thumbnails.length;
+    //     setActiveSlide(newActiveSlide);
+    // };
 
-    const handleSlideNext = () => {
-        const newActiveSlide = (activeSlide + 1) % thumbnails.length;
-        setActiveSlide(newActiveSlide);
-    };
+    // const handleSlideNext = () => {
+    //     const newActiveSlide = (activeSlide + 1) % thumbnails.length;
+    //     setActiveSlide(newActiveSlide);
+    // };
 
     const thumbnails = [
         'https://bizweb.dktcdn.net/100/011/344/products/rule-1-r1-protein-chocolate-fudge-5lbs-900x900-jpeg.jpg?v=1688038731657',
@@ -36,94 +36,11 @@ const DetailProduct = () => {
                 {/* body */}
                 <div className='row'>
                     <div className='col-md-6'>
-                        {/* <div
-                            id='carouselExampleDark'
-                            className='carousel carousel-dark slide'
-                            data-bs-ride='carousel'
-                        >
-                            <div className='carousel-inner'>
-                                {thumbnails.map((thumbnail, index) => {
-                                    return (
-                                        <div
-                                            key={index}
-                                            className={`carousel-item ${
-                                                index === activeSlide
-                                                    ? 'active'
-                                                    : ''
-                                            }`}
-                                        >
-                                            <div className='square-image'>
-                                                <img
-                                                    src={thumbnail}
-                                                    className='d-block w-100 h-full object-cover'
-                                                    alt='Whey Protein'
-                                                />
-                                            </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                            <button
-                                className='carousel-control-prev'
-                                onClick={handleSlidePrev}
-                                type='button'
-                                data-bs-target='#carouselExampleDark'
-                                data-bs-slide='prev'
-                            >
-                                <span
-                                    className='carousel-control-prev-icon'
-                                    aria-hidden='true'
-                                ></span>
-                                <span className='visually-hidden'>
-                                    Previous
-                                </span>
-                            </button>
-                            <button
-                                className='carousel-control-next'
-                                onClick={handleSlideNext}
-                                type='button'
-                                data-bs-target='#carouselExampleDark'
-                                data-bs-slide='next'
-                            >
-                                <span
-                                    className='carousel-control-next-icon'
-                                    aria-hidden='true'
-                                ></span>
-                                <span className='visually-hidden'>Next</span>
-                            </button>
-                        </div> */}
                         <div>
                             <SliderComponent arrImg={thumbnails} />
                         </div>
-
-                        {/* Thumbnail */}
-                        <div className='row'>
-                            {/* <div className='thumbnail-container flex justify-between mt-[20px]'> */}
-                            {/* {thumbnails.map((thumbnail, index) => {
-                                return (
-                                    <div
-                                        key={index}
-                                        onClick={() => setActiveSlide(index)}
-                                        className={`${thumbnailClass} ${
-                                            index === activeSlide
-                                                ? styles.active
-                                                : ''
-                                        }`}
-                                        data-bs-target='#carouselExampleDark'
-                                        data-bs-slide-to={index}
-                                    >
-                                        <img
-                                            src={thumbnail}
-                                            className='thumbnail-image'
-                                            alt='Thumbnail Image'
-                                        />
-                                    </div>
-                                );
-                            })} */}
-
-                            {/* </div> */}
-                        </div>
                     </div>
+                    {/* Thumbnail */}
                     <div className='col-md-6'>
                         <div className='product-details p-[20px]'>
                             <div className='flex flex-col gap-y-4'>
